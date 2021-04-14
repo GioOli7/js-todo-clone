@@ -72,6 +72,10 @@ $(document).ready(function() {
     $('body').on('click', '.app_todos li i', function() {
         var item = $(this).parent('li')
         item.remove();
+        console.log(todos.find('li').length);
+        if (todos.find('li').length === 0) {
+            confetti();
+        }
     })
 
     // 4 - Cliccando sul testo compare uno sbarramento a indicarne il completamento
@@ -79,7 +83,7 @@ $(document).ready(function() {
     $('body').on('click', '.app_todos .text', function() {
         $(this).toggleClass('done');
     })
-    
+
 
     // end document ready
 })
