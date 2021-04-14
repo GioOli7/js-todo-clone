@@ -47,6 +47,23 @@ $(document).ready(function() {
         todos.append(cloneItem);
     }
 
+    // 2 - inserimento nuovo todo con un input testuale ed eventi tastiera
+    newInput.keyup(function(e) {
+        if (e.which === 13) {
+            // console.log('invio');
+            // console.log(newInput.val());
+
+            // copio in variabile il valore, quindi il testo dell input
+            inputText = newInput.val();
+            // copio template
+            var cloneItem = template.clone();
+            // inserisco il testo
+            cloneItem.find('.text').text(inputText);
+            // aggiungo alla lista
+            todos.append(cloneItem);
+        }
+    })
+
 
 
 
