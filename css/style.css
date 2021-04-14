@@ -38,18 +38,18 @@ h1 {
     box-shadow: 0 10px 10px -10px #000;
 }
 
-.app_list {
+.app_todos {
     list-style: none;
 }
 
-.app_list-item {
+.app_todos-item {
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
     color: #fff;
 }
 
-.app_list-item .delete-icon:hover {
+.app_todos-item .delete-icon:hover {
     color: rgb(126, 0, 0);
     cursor: pointer;
     transition: color 0.2s;
