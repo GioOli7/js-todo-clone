@@ -52,15 +52,18 @@ $(document).ready(function() {
             // console.log(newInput.val());
 
             // copio in variabile il valore, quindi il testo dell input
-            inputText = newInput.val();
-            // copio template
-            var cloneItem = template.clone();
-            // inserisco il testo
-            cloneItem.find('.text').text(inputText);
-            // aggiungo alla lista
-            todos.append(cloneItem);
-            // reset
-            newInput.val('');
+            inputText = newInput.val().trim();
+
+            if (inputText !== '') {
+                // copio template
+                var cloneItem = template.clone();
+                // inserisco il testo
+                cloneItem.find('.text').text(inputText);
+                // aggiungo alla lista
+                todos.append(cloneItem);
+                // reset
+                newInput.val('');
+            }
         }
     })
 
