@@ -14,8 +14,6 @@ $(document).ready(function() {
     var template = $('#template .app_todos-item')
     var todos = $('.app_todos')
     var newInput = $('#input');
-    var listItem = $('.app_todos-item');
-    var deleteItem = $('.app_todos-item i.delete-icon');
 
     var todoItems = [
         {
@@ -49,7 +47,7 @@ $(document).ready(function() {
 
     // 2 - inserimento nuovo todo con un input testuale ed eventi tastiera
     newInput.keyup(function(e) {
-        if (e.which === 13) {
+        if (e.which === 13) {           // 13 è il codice del tasto invio
             // console.log('invio');
             // console.log(newInput.val());
 
@@ -61,10 +59,17 @@ $(document).ready(function() {
             cloneItem.find('.text').text(inputText);
             // aggiungo alla lista
             todos.append(cloneItem);
+            // reset
+            newInput.val('');
         }
     })
 
-
+    // 3 - Rimozione todo con click su icona
+    
+    $('body').on('click', '.app_todos li i', function() {
+        var item = $(this).parent('li')
+        item.remove();
+    })
 
 
     // end document ready
