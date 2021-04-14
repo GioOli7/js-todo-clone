@@ -54,3 +54,8 @@ h1 {
     cursor: pointer;
     transition: color 0.2s;
 }
+
+.app_todos-item .text.done {
+    text-decoration: line-through;
+    color: #aaa;
+}

@@ -71,6 +71,12 @@ $(document).ready(function() {
         item.remove();
     })
 
+    // 4 - Cliccando sul testo compare uno sbarramento a indicarne il completamento
+
+    $('body').on('click', '.app_todos .text', function() {
+        $(this).toggleClass('done');
+    })
+    
 
     // end document ready
 })
